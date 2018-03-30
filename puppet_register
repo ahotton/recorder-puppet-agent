@@ -15,8 +15,6 @@ spawn ssh -oStrictHostKeyChecking=no $user@$server "rm -rf /etc/puppetlabs/puppe
 expect "Password:"
 send "$pass\r"
 sleep 2
-#clean existing certificat
-#exec /opt/puppetlabs/bin/puppet cert clean $server
 
 #Generate client certificat
 spawn ssh -oStrictHostKeyChecking=no $user@$server "puppet agent --test --noop --environment work --server puppet-rec"
