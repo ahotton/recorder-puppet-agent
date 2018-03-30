@@ -26,10 +26,8 @@ sleep 6
 
 #Sign certificat on master
  exec /opt/puppetlabs/bin/puppet cert sign $server
-#sleep 1
+sleep 1
 #Exec new -test -noop
-#spawn ssh -oStrictHostKeyChecking=no $user@$server "puppet agent --test --noop --environment work --server puppet-rec"
-#expect "Password:"
-#send "$pass\r"
-#interact
-
+spawn ssh -oStrictHostKeyChecking=no $user@$server "puppet agent --test --noop --environment work --server puppet-rec"
+expect "Password:"
+send "$pass\r"
