@@ -1,1 +1,1 @@
-./run file user passwd
+./run $file $user $passwd
